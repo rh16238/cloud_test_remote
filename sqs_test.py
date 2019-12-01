@@ -50,7 +50,7 @@ while awaiting_input:
 			awaiting_input = False
 			print("offset: " + str(offset) + " stride: " +str(stride) + " hash: " + string_to_hash + " difficulty: " + str(difficulty))
 
-queue_output.send_message(MessageBody='boto3', MessageGroupId = "1",MessageDeduplicationId ="2", MessageAttributes={
+queue_output.send_message(MessageBody='boto3', MessageGroupId = "1",MessageDeduplicationId =string_to_hash, MessageAttributes={
     'hash': {
         'StringValue':"FF",
         'DataType': 'String'
